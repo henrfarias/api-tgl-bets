@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Novas apostas adicionadas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style='margin: 0; padding: 0.5em; font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif'  >
+  <h1 style='font-size: 32px; text-align: center; margin-top: 10px'>{{ username }}, suas apostas foram salvas!</h1>
+  <ul style='list-style: none; width: 100%;'>
+    @each(bet in bets)
+      <li style='margin-top: 1em; border-left: 4px solid {{ bet.game.color }}; border-radius: 4px; width: 100%;'>
+        <h2 style='color:{{ bet.game.color }}; font-weight: bold; font-size: 1.2em; margin-left:0.5em'>
+          {{ bet.game.type }} - <span style='color: #555; font-size: 0.7em;'>R${{ bet.current_price }}</span>
+        </h2>
+        <strong style='color: #333; margin-left:0.5em;'>{{ bet.numbers }}</strong>
+      </li>
+    @endeach
+  </ul>
+  <h3 style='margin-left: 20%; color: #333'>Total: R$ {{ total }}</h3>
+
+  <footer style='margin-top: auto'>Grupo TGL - Bets</footer>
+</body>
+</html>
